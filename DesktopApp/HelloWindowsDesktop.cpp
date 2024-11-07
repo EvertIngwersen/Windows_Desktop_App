@@ -5,3 +5,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <tchar.h>
+
+// Global Variables 
+
+// The  main function class name.
+static TCHAR szWindowsClass[] = _T("DesktopApp");
+
+
