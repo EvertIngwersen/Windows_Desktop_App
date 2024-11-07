@@ -1,61 +1,58 @@
-// HelloWindowsDekstopApp 
-// compile with: /D_UNICOD /DUNICODE /DWIN32 /D_WINDOWS /c
+// HelloWindowsDesktop.cpp
+// compile with: /D_UNICODE /DUNICODE /DWIN32 /D_WINDOWS /c
 
 #include <windows.h>
 #include <stdlib.h>
 #include <string.h>
 #include <tchar.h>
 
-// Global Variables 
+// Global variables
 
-// The  main function class name.
-static TCHAR szWindowsClass[] = _T("DesktopApp");
+// The main window class name.
+static TCHAR szWindowClass[] = _T("DesktopApp");
 
-// The string that appears in the App title bar.
+// The string that appears in the application's title bar.
+static TCHAR szTitle[] = _T("test_C_exp_assignment_5");
 
-static TCHAR szTitle[] = _T("Windows Desktop App Example");
+// Stored instance handle for use in Win32 API calls such as FindResource
+HINSTANCE hInst;
 
-// Stored instance handle for use in Win32 API calls
-HINSTANCE hInst:
-
-// Forward declerations of functions included in this module
+// Forward declarations of functions included in this code module:
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 int WINAPI WinMain(
-	_In_ HINSTANCE hInstance,
-	_In_opt_ HINSTANCE hPrevInstance,
-	_In_ LPSTR lpCmdLine,
-	_In_ int nCmdShow
+    _In_ HINSTANCE hInstance,
+    _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPSTR     lpCmdLine,
+    _In_ int       nCmdShow
 )
-
 {
-	WNDCLASSEX wcex;
+    WNDCLASSEX wcex;
 
-	wcex.cbSize = sizeof(WNDCLASSEX);
-	wcex.style = CS_HREDRAW | CS_VREDRAW;
-	wcex.lpfnWndProc = WndProc;
-	wcex.cbClsExtra = 0;
-	wcex.cbWndExtra = 0;
-	wcex.hInstance = hInstance;
-	wcex.hIcon = LoadIcon(wcex.hInstance, IDI_APPLICATION);
-	wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
-	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-	wcex.lpszMenuName = NULL;
-	wcex.lpszClassName = szWindowClass;
-	wcex.hIconSm = LoadIcon(wcex.hInstance, IDI_APPLICATION);
+    wcex.cbSize = sizeof(WNDCLASSEX);
+    wcex.style = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc = WndProc;
+    wcex.cbClsExtra = 0;
+    wcex.cbWndExtra = 0;
+    wcex.hInstance = hInstance;
+    wcex.hIcon = LoadIcon(wcex.hInstance, IDI_APPLICATION);
+    wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
+    wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+    wcex.lpszMenuName = NULL;
+    wcex.lpszClassName = szWindowClass;
+    wcex.hIconSm = LoadIcon(wcex.hInstance, IDI_APPLICATION);
 
-	if (!RegisterClassEx(&wcex))
-	{
-		MessageBox(NULL,
-			_T("Call to RegisterClassEx failed"),
-			_T("Windows Desktop Guider Tour"),
-			NULL);
-		
-		return 1;
-	}
+    if (!RegisterClassEx(&wcex))
+    {
+        MessageBox(NULL,
+            _T("Call to RegisterClassEx failed!"),
+            _T("Windows Desktop Guided Tour"),
+            NULL);
 
-	
-	// Store instance handle in our global variable
+        return 1;
+    }
+
+    // Store instance handle in our global variable
     hInst = hInstance;
 
     // The parameters to CreateWindowEx explained:
@@ -120,7 +117,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     PAINTSTRUCT ps;
     HDC hdc;
-    TCHAR greeting[] = _T("Hello, Windows desktop!");
+    TCHAR greeting[] = _T("Trek een bak!");
 
     switch (message)
     {
