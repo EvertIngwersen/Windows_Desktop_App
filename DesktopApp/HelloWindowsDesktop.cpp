@@ -117,7 +117,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     PAINTSTRUCT ps;
     HDC hdc;
-    TCHAR greeting[] = _T("Trek een bak!");
+        TCHAR greeting[] = _T("Hello World _ bool == True");
 
     switch (message)
     {
