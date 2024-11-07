@@ -44,6 +44,19 @@ int WINAPI WinMain(
 	wcex.lpszClassName = szWindowClass;
 	wcex.hIconSm = LoadIcon(wcex.hInstance, IDI_APPLICATION);
 
+	if (!RegisterClassEx(&wcex))
+	{
+		MessageBox(NULL,
+			_T("Call to RegisterClassEx failed"),
+			_T("Windows Desktop Guider Tour"),
+			NULL);
+		
+		return 1;
+	}
+
+	
+	// Store instance handle in our global variable
+
 
 
 
