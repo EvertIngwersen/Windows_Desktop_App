@@ -24,10 +24,11 @@ int main()
 	string adres = "Buitenwatersloot";
 
 	cout << "I am " << age << "years old and I live on the " << adres << endl;
-		 
-	return 0;
 
+	return 0;
 }
+
+
 
 // variable decleration 
 
