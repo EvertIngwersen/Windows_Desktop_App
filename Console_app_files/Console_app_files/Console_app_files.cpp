@@ -18,7 +18,13 @@ int main()
 
 	cout << "\n";
 	cout << result;
+	cout << "\n";
 
+	int age = 23;
+	string adres = "Buitenwatersloot";
+
+	cout << "I am " << age << "years old and I live on the " << adres << endl;
+		 
 	return 0;
 
 }
